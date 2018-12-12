@@ -1,5 +1,6 @@
 package com.victor.webservice.domain.posts;
 
+import com.victor.webservice.domain.BaseTimeEntitiy;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -7,10 +8,10 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-@NoArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 @Entity
-public class Posts
+public class Posts extends BaseTimeEntitiy
 {
     @Id
     @GeneratedValue

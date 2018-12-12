@@ -9,7 +9,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
 
-import static org.junit.Assert.assertTrue;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -28,7 +29,7 @@ public class PostsRepositoryTest {
     }
 
     @Test
-    public void 게시글저장_불러오기() {
+    public void addPost() {
         //given
         postsRepository.save(Posts.builder()
                 .title("테스트 게시글")
@@ -40,7 +41,7 @@ public class PostsRepositoryTest {
 
         //then
         Posts posts = postsList.get(0);
-//        assertTrue(posts.getCreatedDate().isAfter(now));
-//        assertTrue(posts.getModifiedDate().isAfter(now));
+        assertThat(posts.getTitle(), is("테스트 게시글"));
+        assertThat(posts.getContent(), is("테스트 본문"));
     }
 }
