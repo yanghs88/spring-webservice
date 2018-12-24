@@ -31,15 +31,18 @@ public class PostsRepositoryTest {
     @Test
     public void addPost() {
         //given
+        //테스트 기반 환경을 구축하는 단
         postsRepository.save(Posts.builder()
                 .title("테스트 게시글")
                 .content("테스트 본문")
                 .author("victor@within.co.kr")
                 .build());
         //when
+        //테스트 하고자 하는 행위 선언
         List<Posts> postsList = postsRepository.findAll();
 
         //then
+        //테스트 결과 검증
         Posts posts = postsList.get(0);
         assertThat(posts.getTitle(), is("테스트 게시글"));
         assertThat(posts.getContent(), is("테스트 본문"));

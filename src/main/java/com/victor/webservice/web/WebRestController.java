@@ -27,4 +27,11 @@ public class WebRestController {
     {
         postsRepository.save(dto.toEntity());
     }
+    /*
+    @PostMapping("/posts")
+    public Long savePosts(@RequestBody PostsSaveRequestDto dto)
+    {
+        return postsService.save(dto);
+    }
+    */
 }
