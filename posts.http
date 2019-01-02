@@ -1,0 +1,12 @@
+#GET http://localhost:8080/hello
+
+POST http://localhost:8080/posts
+Content-Type: application/json
+
+{
+  "title": "test2",
+  "content": "내용",
+  "author": "victor"
+}
+
+###
